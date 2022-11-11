@@ -1,5 +1,6 @@
 import "./App.css";
 import Expenses from "./comp/expenses/expenses";
+import NewExpenses from "./comp/NewExpenses/NewExpenses";
 
 const App = () => {
   const expenses = [
@@ -23,8 +24,14 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  const NewDataHandler = (expenseData) => {
+    
+    console.log(expenseData)
+    }
+
   return (
     <div className="App">
+      <NewExpenses onNewData={NewDataHandler}/>
       <Expenses Items={expenses} />
     </div>
   );
